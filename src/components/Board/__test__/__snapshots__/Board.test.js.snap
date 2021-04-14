@@ -84,13 +84,15 @@ exports[`Matches Snapshot 1`] = `
     className="button"
     data-testid="toggle-board"
     onClick={[Function]}
-    style={
-      Object {
-        "marginTop": 24,
-      }
-    }
   >
     SHOW ENEMY BOARD
+  </button>
+  <button
+    className="button"
+    data-testid="save-game"
+    onClick={[Function]}
+  >
+    SAVE GAME
   </button>
 </div>
 `;

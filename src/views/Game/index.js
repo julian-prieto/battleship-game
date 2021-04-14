@@ -11,7 +11,9 @@ import { getFormattedDate } from 'lib/common';
 import {
   generateEmptyArray,
   createRandomShip,
+  saveGameResultInLocalStorage,
   saveGameInLocalStorage,
+  getGameInLocalStorage
 } from 'lib/game';
 
 import { DEFAULT_SHIPS, BOARD_SIZE } from 'config';
@@ -49,7 +51,7 @@ export default function Game() {
         gameOver: true,
         finishedAt,
       }));
-      saveGameInLocalStorage({ ...game, gameOver: true, finishedAt });
+      saveGameResultInLocalStorage({ ...game, gameOver: true, finishedAt });
     }
 
     // Check for WIN condition
@@ -65,7 +67,7 @@ export default function Game() {
           win: true,
           finishedAt,
         }));
-        saveGameInLocalStorage({ ...game, win: true, finishedAt });
+        saveGameResultInLocalStorage({ ...game, win: true, finishedAt });
       }
     }
   }, [game]);
@@ -107,6 +109,13 @@ export default function Game() {
       ...INITIAL_GAME_STATE,
     }));
   };
+
+  const handleSaveGame = () => saveGameInLocalStorage(game)
+
+  const handleLoadGame = () => {
+    const savedGame = getGameInLocalStorage();
+    if(savedGame) setGame(savedGame)
+  }
 
   const handleSinkTry = (x, y) => {
     const nextGame = { ...game };
@@ -156,7 +165,7 @@ export default function Game() {
       {game.win && <GameWin onGameReset={handleGameReset} />}
       {game.gameOver && <GameOver onGameReset={handleGameReset} />}
       {!game.gameOver && !game.win && !game.difficulty && (
-        <LevelSelector onSelectDifficulty={handleSelectDifficulty} />
+        <LevelSelector onSelectDifficulty={handleSelectDifficulty} onLoadGame={handleLoadGame} />
       )}
       {!game.gameOver && !game.win && game.difficulty && (
         <>
@@ -168,6 +177,7 @@ export default function Game() {
             board={game.board}
             userBoard={game.userBoard}
             onSinkTry={handleSinkTry}
+            onSaveGame={handleSaveGame}
           />
         </>
       )}

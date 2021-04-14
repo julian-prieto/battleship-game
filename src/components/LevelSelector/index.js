@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { DIFFICULTY_LEVELS } from 'config';
+import { getGameInLocalStorage } from 'lib/game';
 
 import styles from './styles.module.scss';
 
-export default function LevelSelector({ onSelectDifficulty }) {
+export default function LevelSelector({ onSelectDifficulty, onLoadGame: handleLoadGame, defaultGetGameInLocalStorage }) {
   const handleSelectDifficulty = (level) => onSelectDifficulty(level);
+  const getGameFromLocalStorage = defaultGetGameInLocalStorage || getGameInLocalStorage;
 
   return (
     <main className={styles.component}>
@@ -20,6 +22,13 @@ export default function LevelSelector({ onSelectDifficulty }) {
             {level.name}
           </button>
         ))}
+        {getGameFromLocalStorage() && <button
+          data-testid="load-game"
+          onClick={() => handleLoadGame()}
+          className={styles.button}
+        >
+          LOAD GAME
+        </button>}
       </div>
     </main>
   );
@@ -27,4 +36,6 @@ export default function LevelSelector({ onSelectDifficulty }) {
 
 LevelSelector.propTypes = {
   onSelectDifficulty: PropTypes.func.isRequired,
+  onLoadGame: PropTypes.func.isRequired,
+  defaultGetGameInLocalStorage: PropTypes.func,
 };

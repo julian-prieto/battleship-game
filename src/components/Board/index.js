@@ -9,7 +9,7 @@ const boardAxis = {
   rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
 };
 
-export default function Board({ board, userBoard, onSinkTry }) {
+export default function Board({ board, userBoard, onSinkTry, onSaveGame: handleSaveGame }) {
   const size = board.length;
   const [showUserBoard, setShowUserBoard] = useState(true);
 
@@ -62,11 +62,17 @@ export default function Board({ board, userBoard, onSinkTry }) {
       </div>
       <button
         data-testid="toggle-board"
-        style={{ marginTop: 24 }}
         onClick={() => setShowUserBoard(!showUserBoard)}
         className={styles.button}
       >
         {showUserBoard ? 'SHOW ENEMY BOARD' : 'SHOW USER BOARD'}
+      </button>
+      <button
+        data-testid="save-game"
+        onClick={() => handleSaveGame()}
+        className={styles.button}
+      >
+        SAVE GAME
       </button>
     </div>
   );
@@ -76,4 +82,5 @@ Board.propTypes = {
   board: PropTypes.array.isRequired,
   userBoard: PropTypes.array.isRequired,
   onSinkTry: PropTypes.func.isRequired,
+  onSaveGame: PropTypes.func.isRequired,
 };

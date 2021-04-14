@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getSavedGamesInLocalStorage } from 'lib/game';
+import { getGameResultsInLocalStorage } from 'lib/game';
 import styles from './styles.module.scss';
 
 export default function Score({ defaultGames }) {
@@ -8,7 +8,7 @@ export default function Score({ defaultGames }) {
 
   useEffect(() => {
     let savedGames;
-    if (!defaultGames) savedGames = getSavedGamesInLocalStorage();
+    if (!defaultGames) savedGames = getGameResultsInLocalStorage();
     else savedGames = defaultGames;
     setGames(savedGames);
   }, [defaultGames]);

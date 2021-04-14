@@ -22,6 +22,7 @@ const INITIAL_GAME_STATE = {
 };
 
 const handleSinkTry = jest.fn();
+const handleSaveGame = jest.fn();
 
 it("Renders without crashing", () => {
   const div = document.createElement("div");
@@ -30,6 +31,7 @@ it("Renders without crashing", () => {
       board={INITIAL_GAME_STATE.board}
       userBoard={INITIAL_GAME_STATE.userBoard}
       onSinkTry={handleSinkTry}
+      onSaveGame={handleSaveGame}
     />,
     div
   );
@@ -42,6 +44,7 @@ it("Renders User Board Correctly", () => {
       board={INITIAL_GAME_STATE.board}
       userBoard={INITIAL_GAME_STATE.userBoard}
       onSinkTry={handleSinkTry}
+      onSaveGame={handleSaveGame}
     />
   );
   expect(getByTestId("board").getAttribute("class")).toBe("board");
@@ -53,6 +56,7 @@ it("Renders Enemy Board Correctly", () => {
       board={INITIAL_GAME_STATE.board}
       userBoard={INITIAL_GAME_STATE.userBoard}
       onSinkTry={handleSinkTry}
+      onSaveGame={handleSaveGame}
     />
   );
   fireEvent.click(getByTestId("toggle-board"));
@@ -60,17 +64,32 @@ it("Renders Enemy Board Correctly", () => {
   expect(getByTestId("board").getAttribute("class")).toBe("board");
 });
 
-it("SinkTry runs correctly", () => {
+it("SinkTry Runs Correctly", () => {
   const { getByTestId } = render(
     <Board
       board={INITIAL_GAME_STATE.board}
       userBoard={INITIAL_GAME_STATE.userBoard}
       onSinkTry={handleSinkTry}
+      onSaveGame={handleSaveGame}
     />
   );
   fireEvent.click(getByTestId("col-user-0-0"));
 
   expect(handleSinkTry).toHaveBeenCalledTimes(1);
+});
+
+it("Saves Game Correctly", () => {
+  const { getByTestId } = render(
+    <Board
+      board={INITIAL_GAME_STATE.board}
+      userBoard={INITIAL_GAME_STATE.userBoard}
+      onSinkTry={handleSinkTry}
+      onSaveGame={handleSaveGame}
+    />
+  );
+  fireEvent.click(getByTestId("save-game"));
+
+  expect(handleSaveGame).toHaveBeenCalledTimes(1);
 });
 
 it("Matches Snapshot", () => {
@@ -80,6 +99,7 @@ it("Matches Snapshot", () => {
         board={INITIAL_GAME_STATE.board}
         userBoard={INITIAL_GAME_STATE.userBoard}
         onSinkTry={handleSinkTry}
+        onSaveGame={handleSaveGame}
       />
     )
     .toJSON();

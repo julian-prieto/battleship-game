@@ -48,20 +48,34 @@ export const canPlaceShipAtPosition = (x, y, length, direction, board) => {
   return !hasShipSomewhere;
 };
 
-export const getSavedGamesInLocalStorage = () => {
-  const games = localStorage.getItem('games') || '[]';
+export const getGameResultsInLocalStorage = () => {
+  const games = localStorage.getItem('results') || '[]';
 
   return JSON.parse(games);
 };
 
-export const saveGameInLocalStorage = (game) => {
+export const saveGameResultInLocalStorage = (game) => {
   const { board, userBoard, ...gameData } = game;
-  const games = localStorage.getItem('games') || '[]';
+  const games = localStorage.getItem('results') || '[]';
   const jsonGames = JSON.parse(games);
 
   jsonGames.unshift(gameData);
 
-  localStorage.setItem('games', JSON.stringify(jsonGames));
+  localStorage.setItem('results', JSON.stringify(jsonGames));
 
   return jsonGames;
+};
+
+export const getGameInLocalStorage = () => {
+  const savedGame = localStorage.getItem('game');
+  
+  if(savedGame) return JSON.parse(savedGame);
+
+  return null
+};
+
+export const saveGameInLocalStorage = (game) => {
+  localStorage.setItem('game', JSON.stringify(game));
+
+  return;
 };

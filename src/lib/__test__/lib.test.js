@@ -3,8 +3,10 @@ import { getFormattedDate } from 'lib/common';
 import {
   createRandomShip,
   generateEmptyArray,
-  getSavedGamesInLocalStorage,
-  saveGameInLocalStorage,
+  getGameResultsInLocalStorage,
+  saveGameResultInLocalStorage,
+  getGameInLocalStorage,
+  saveGameInLocalStorage
 } from 'lib/game';
 
 const BOARD_SIZE = 10;
@@ -54,12 +56,22 @@ it('Creates Random 4 Sized Ship Correctly', () => {
   expect(board.flat().filter((item) => item === '4A').length).toBe(4);
 });
 
-it('Reads Saved Games correctly', () => {
-  const savedGames = getSavedGamesInLocalStorage();
+it('Reads Game Results correctly', () => {
+  const savedGames = getGameResultsInLocalStorage();
   expect(savedGames.length).toBe(0);
+});
+
+it('Save New Game Result correctly', () => {
+  const savedGames = saveGameResultInLocalStorage(DUMMY_GAME_LOST);
+  expect(savedGames.length).toBe(1);
+});
+
+it('Does not crash on empty saved game', () => {
+  const savedGames = getGameInLocalStorage();
+  expect(savedGames).toBe(null);
 });
 
 it('Save New Game correctly', () => {
   const savedGames = saveGameInLocalStorage(DUMMY_GAME_LOST);
-  expect(savedGames.length).toBe(1);
+  
 });
