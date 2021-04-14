@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<div
+  className="main"
+>
+  <div
+    className="item"
+    data-testid="ship-count-1"
+  >
+    <div
+      className="ship ship-1"
+    />
+    <span
+      className="value"
+    >
+      4
+      /
+      4
+       
+    </span>
+  </div>
+  <div
+    className="item"
+    data-testid="ship-count-2"
+  >
+    <div
+      className="ship ship-2"
+    />
+    <div
+      className="ship ship-2"
+    />
+    <span
+      className="value"
+    >
+      0
+      /
+      3
+       
+    </span>
+  </div>
+  <div
+    className="item"
+    data-testid="ship-count-3"
+  >
+    <div
+      className="ship ship-3"
+    />
+    <div
+      className="ship ship-3"
+    />
+    <div
+      className="ship ship-3"
+    />
+    <span
+      className="value"
+    >
+      0
+      /
+      2
+       
+    </span>
+  </div>
+  <div
+    className="item"
+    data-testid="ship-count-4"
+  >
+    <div
+      className="ship ship-4"
+    />
+    <div
+      className="ship ship-4"
+    />
+    <div
+      className="ship ship-4"
+    />
+    <div
+      className="ship ship-4"
+    />
+    <span
+      className="value"
+    >
+      0
+      /
+      1
+       
+    </span>
+  </div>
+</div>
+`;

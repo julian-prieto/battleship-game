@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<nav>
+  <ul
+    className="ul"
+    data-testid="sections-list"
+  >
+    <li
+      className="li"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="li"
+    >
+      <a
+        href="/game"
+        onClick={[Function]}
+      >
+        Play
+      </a>
+    </li>
+    <li
+      className="li"
+    >
+      <a
+        href="/scores"
+        onClick={[Function]}
+      >
+        My Scores
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

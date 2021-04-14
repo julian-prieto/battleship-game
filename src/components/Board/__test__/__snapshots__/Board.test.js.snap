@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<div
+  className="main"
+>
+  <div
+    className="board"
+    data-testid="board"
+  >
+    <div
+      className="head"
+    >
+      <div
+        className="axis"
+      />
+      <div
+        className="axis"
+      >
+        1
+      </div>
+      <div
+        className="axis"
+      >
+        2
+      </div>
+      <div
+        className="axis"
+      >
+        3
+      </div>
+      <div
+        className="axis"
+      >
+        4
+      </div>
+      <div
+        className="axis"
+      >
+        5
+      </div>
+      <div
+        className="axis"
+      >
+        6
+      </div>
+      <div
+        className="axis"
+      >
+        7
+      </div>
+      <div
+        className="axis"
+      >
+        8
+      </div>
+      <div
+        className="axis"
+      >
+        9
+      </div>
+      <div
+        className="axis"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="axis"
+      >
+        A
+      </div>
+      <div
+        className="column"
+        data-testid="col-user-0-0"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <button
+    className="button"
+    data-testid="toggle-board"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginTop": 24,
+      }
+    }
+  >
+    SHOW ENEMY BOARD
+  </button>
+</div>
+`;

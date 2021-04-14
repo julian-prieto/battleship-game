@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<main
+  className="main"
+>
+  <span
+    className="title"
+    data-testid="game-history"
+  >
+    Game History
+  </span>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Result
+        </th>
+        <th>
+          Difficulty
+        </th>
+        <th>
+          Failed Shots
+        </th>
+        <th>
+          Accuracy
+        </th>
+        <th>
+          Start
+        </th>
+        <th>
+          End
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</main>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<main
+  className="main"
+>
+  <main
+    className="component"
+  >
+    <span
+      className="title"
+    >
+      Please select difficulty
+    </span>
+    <div
+      className="buttons"
+    >
+      <button
+        className="button"
+        data-testid="select-level-Easy"
+        onClick={[Function]}
+      >
+        Easy
+      </button>
+      <button
+        className="button"
+        data-testid="select-level-Medium"
+        onClick={[Function]}
+      >
+        Medium
+      </button>
+      <button
+        className="button"
+        data-testid="select-level-Hard"
+        onClick={[Function]}
+      >
+        Hard
+      </button>
+    </div>
+  </main>
+</main>
+`;

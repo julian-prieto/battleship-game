@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<main
+  className="main"
+>
+  <img
+    alt="GameOver"
+    src="gameover.png"
+    width={450}
+  />
+  <button
+    className="button"
+    data-testid="reset"
+    onClick={[Function]}
+  >
+    Play Again
+  </button>
+</main>
+`;

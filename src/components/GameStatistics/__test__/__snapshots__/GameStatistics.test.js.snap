@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<div
+  className="main"
+>
+  <span
+    className="item"
+    data-testid="level"
+  >
+    Level: 
+    medium
+  </span>
+  <span
+    className="item"
+    data-testid="attempts"
+  >
+    Attempts: 
+    5
+    /
+    10
+  </span>
+  <button
+    className="button"
+    data-testid="end-game"
+    onClick={[MockFunction]}
+  >
+    End Game
+  </button>
+</div>
+`;

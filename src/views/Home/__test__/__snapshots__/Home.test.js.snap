@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<main
+  className="main"
+>
+  <span
+    className="title"
+    data-testid="welcome"
+  >
+    Welcome to Battleship Game
+  </span>
+  <img
+    alt="Splash"
+    src="splash.png"
+    width={450}
+  />
+</main>
+`;
