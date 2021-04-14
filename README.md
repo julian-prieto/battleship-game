@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Battleship Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b1fced3-db3c-4884-a62b-28284934b1f6/deploy-status)](https://app.netlify.com/sites/sleepy-mahavira-eeac18/deploys)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Battleship Game is a web browser based game to help people have a fun time at any moment of the day :)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for sake of simplicity. In can be easily ported to other framework as NextJS.
 
-### `yarn start`
+- Application is built using `React` and Tested with `Jest` and `react-testing-library`
+- For routing `react-router-dom` is used
+- Styling is done using SASS modules
+- Prop validations are done with `prop-types`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Clone repository `git clone https://github.com/julianprieto-dev/battleship-game.git`
+- Access repository directory `cd battleship-game`
+- Install NPM packages `npm install`
 
-### `yarn test`
+## Test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Run jest `npm test`
+- Access coverage report at `battleship-game/coverage/lcov-report/index.html`
 
-### `yarn build`
+## Run locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Run jest `npm start`
+- Access application by accessing to URL `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Game configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Board size, difficulty level and amount/size of ships can be configured in file `battleship-game/src/config/index.js`
 
-### `yarn eject`
+```js
+export const DIFFICULTY_LEVELS = [
+  {
+    name: "Easy",
+    maxAttempts: null,
+  },
+  {
+    name: "Medium",
+    maxAttempts: 100,
+  },
+  {
+    name: "Hard",
+    maxAttempts: 50,
+  },
+];
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export const DEFAULT_SHIPS = [
+  { size: 1, amount: 4 },
+  { size: 2, amount: 3 },
+  { size: 3, amount: 2 },
+  { size: 4, amount: 1 },
+];
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export const BOARD_SIZE = 10;
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Game Tutorial
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To start a Game you have to browse to `PLAY` section and select a difficulty level from the previously mentioned list (Easy, Medium, Hard).
 
-## Learn More
+To win the game you must land shots to all the ships without surpassing the maximum number of attempts defined by the difficulty level.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Partially harmed ships are represented in yellow shades.
+- Sunk ships are represented in red shades.
+- Missed shots are represented in blue (as the ocean :))
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can be a little cheater and check the enemy board with the button beneath the board.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You lose if you surpass the max number attempts (for example, `50` failed attempts in `HARD mode`).
