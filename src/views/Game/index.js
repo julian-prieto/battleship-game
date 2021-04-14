@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   LevelSelector,
   Board,
@@ -6,17 +6,17 @@ import {
   ShipStatistics,
   GameWin,
   GameOver,
-} from "components";
-import { getFormattedDate } from "lib/common";
+} from 'components';
+import { getFormattedDate } from 'lib/common';
 import {
   generateEmptyArray,
   createRandomShip,
   saveGameInLocalStorage,
-} from "lib/game";
+} from 'lib/game';
 
-import { DEFAULT_SHIPS, BOARD_SIZE } from "config";
+import { DEFAULT_SHIPS, BOARD_SIZE } from 'config';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 const INITIAL_GAME_STATE = {
   difficulty: null,
@@ -79,8 +79,8 @@ export default function Game() {
       Array.from({ length: ship.amount }).forEach((_, index) => {
         nextBoard = createRandomShip(
           ship.size,
-          `${ship.size + "" + index}`,
-          nextBoard
+          `${`${ship.size}${index}`}`,
+          nextBoard,
         );
       });
     });
@@ -111,10 +111,10 @@ export default function Game() {
   const handleSinkTry = (x, y) => {
     const nextGame = { ...game };
     const shipName = game.board[y][x]; // First character is the Long/Type, Second character is the ID (0, 1, 2...)
-    if (game.userBoard[y][x][0] === `O`) {
+    if (game.userBoard[y][x][0] === 'O') {
       // "O" references a fully sunk ship
       return;
-    } else if (shipName) {
+    } if (shipName) {
       // User lands a shot
       nextGame.userBoard[y][x] = shipName;
 
@@ -133,21 +133,19 @@ export default function Game() {
         };
 
         for (let i = 0; i < BOARD_SIZE; i++) {
-          if (nextGame.userBoard[i][x] === shipName)
-            nextGame.userBoard[i][x] = `O${shipType}`;
-          if (nextGame.userBoard[y][i] === shipName)
-            nextGame.userBoard[y][i] = `O${shipType}`;
+          if (nextGame.userBoard[i][x] === shipName) { nextGame.userBoard[i][x] = `O${shipType}`; }
+          if (nextGame.userBoard[y][i] === shipName) { nextGame.userBoard[y][i] = `O${shipType}`; }
         }
       }
-      nextGame.tries = nextGame.tries + 1;
+      nextGame.tries += 1;
     } else {
       // User misses a shot
-      if (game.userBoard[y][x] !== "X") {
+      if (game.userBoard[y][x] !== 'X') {
         // Cell was already failed before, not counting attempt
         nextGame.attempts = game.attempts + 1;
-        nextGame.tries = nextGame.tries + 1;
+        nextGame.tries += 1;
       }
-      nextGame.userBoard[y][x] = "X";
+      nextGame.userBoard[y][x] = 'X';
     }
 
     setGame(nextGame);

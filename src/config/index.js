@@ -1,14 +1,14 @@
 export const DIFFICULTY_LEVELS = [
   {
-    name: "Easy",
+    name: 'Easy',
     maxAttempts: null,
   },
   {
-    name: "Medium",
+    name: 'Medium',
     maxAttempts: 100,
   },
   {
-    name: "Hard",
+    name: 'Hard',
     maxAttempts: 50,
   },
 ];

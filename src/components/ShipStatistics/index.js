@@ -20,7 +20,7 @@ export default function ShipStatistics({ sunkShips }) {
             />
           ))}
           <span className={styles.value}>
-            {sunkShips[ship.size] || 0}/{ship.amount}{" "}
+            {sunkShips[ship.size] || 0}/{ship.amount}
           </span>
         </div>
       ))}

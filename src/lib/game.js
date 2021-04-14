@@ -1,9 +1,8 @@
-export const generateEmptyArray = (size) =>
-  new Array(size).fill(0).map(() => new Array(size).fill(0));
+export const generateEmptyArray = (size) => new Array(size).fill(0).map(() => new Array(size).fill(0));
 
 export const createRandomShip = (length, id, board) => {
   let canPlaceRandomShip = false;
-  const direction = Math.round(Math.random()) ? "V" : "H";
+  const direction = Math.round(Math.random()) ? 'V' : 'H';
 
   while (!canPlaceRandomShip) {
     // Generate random coordinates
@@ -22,9 +21,9 @@ export const createRandomShip = (length, id, board) => {
     if (canPlaceRandomShip) {
       const nextBoard = [...board];
       for (let l = 0; l < length; l++) {
-        if (direction === "V") {
+        if (direction === 'V') {
           nextBoard[y + l][x] = id;
-        } else if (direction === "H") {
+        } else if (direction === 'H') {
           nextBoard[y][x + l] = id;
         }
       }
@@ -37,32 +36,32 @@ export const canPlaceShipAtPosition = (x, y, length, direction, board) => {
   let hasShipSomewhere = false;
 
   // Check for board overflow
-  if (direction === "V" && y + length + 1 > board.length) return false;
-  if (direction === "H" && x + length + 1 > board.length) return false;
+  if (direction === 'V' && y + length + 1 > board.length) return false;
+  if (direction === 'H' && x + length + 1 > board.length) return false;
 
   // Check for already existing ships that can overlap
   for (let l = 0; l < length; l++) {
-    if (direction === "H" && board[y][x + l]) hasShipSomewhere = true;
-    if (direction === "V" && board[y + l][x]) hasShipSomewhere = true;
+    if (direction === 'H' && board[y][x + l]) hasShipSomewhere = true;
+    if (direction === 'V' && board[y + l][x]) hasShipSomewhere = true;
   }
 
   return !hasShipSomewhere;
 };
 
 export const getSavedGamesInLocalStorage = () => {
-  const games = localStorage.getItem("games") || "[]";
+  const games = localStorage.getItem('games') || '[]';
 
   return JSON.parse(games);
 };
 
 export const saveGameInLocalStorage = (game) => {
   const { board, userBoard, ...gameData } = game;
-  const games = localStorage.getItem("games") || "[]";
+  const games = localStorage.getItem('games') || '[]';
   const jsonGames = JSON.parse(games);
 
   jsonGames.unshift(gameData);
 
-  localStorage.setItem("games", JSON.stringify(jsonGames));
+  localStorage.setItem('games', JSON.stringify(jsonGames));
 
   return jsonGames;
 };

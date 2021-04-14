@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Navigation } from "components";
-import { Home, Game, Score } from "views";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Navigation } from 'components';
+import { Home, Game, Score } from 'views';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export default function App() {
   return (

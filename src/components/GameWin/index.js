@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import win from "assets/win.png";
+import win from 'assets/win.png';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export default function GameWin({ onGameReset: handleGameReset }) {
   return (

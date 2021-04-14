@@ -1,6 +1,6 @@
-import splash from "assets/splash.png";
+import splash from 'assets/splash.png';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export default function Home() {
   return (

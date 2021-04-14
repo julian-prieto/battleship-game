@@ -4,14 +4,18 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 import { Score } from "views";
-import game from "lib/game";
 
 const mockGames = [
   {
     difficulty: { name: "Easy", maxAttempts: null },
     attempts: 60,
     tries: 81,
-    sunkShips: { 1: 4, 2: 3, 3: 2, 4: 1 },
+    sunkShips: {
+      1: 4,
+      2: 3,
+      3: 2,
+      4: 1,
+    },
     gameOver: false,
     win: true,
     startedAt: "04/14/2021 02:19 p. m.",

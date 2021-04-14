@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import gameover from "assets/gameover.png";
+import gameover from 'assets/gameover.png';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export default function GameOver({ onGameReset: handleGameReset }) {
   return (

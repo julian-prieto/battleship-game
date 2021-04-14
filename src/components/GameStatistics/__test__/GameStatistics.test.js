@@ -8,7 +8,7 @@ import { GameStatistics } from "components";
 
 const INITIAL_GAME_STATE = {
   difficulty: {
-    name: "medium",
+    name: "Medium",
     maxAttempts: 10,
   },
   board: generateEmptyArray(),
@@ -52,7 +52,7 @@ it("Renders Attempts Correctly on Easy", () => {
       game={{
         ...INITIAL_GAME_STATE,
         difficulty: {
-          name: "easy",
+          name: "Easy",
           maxAttempts: null,
         },
       }}

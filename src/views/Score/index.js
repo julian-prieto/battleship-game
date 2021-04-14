@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { getSavedGamesInLocalStorage } from "lib/game";
-import styles from "./styles.module.scss";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { getSavedGamesInLocalStorage } from 'lib/game';
+import styles from './styles.module.scss';
 
 export default function Score({ defaultGames }) {
   const [games, setGames] = useState([]);
@@ -47,10 +47,13 @@ export default function Score({ defaultGames }) {
                   key={`${startedAt}-${finishedAt}`}
                   data-testid={`result-${index}`}
                 >
-                  <td>{win ? "WIN" : "LOSE"}</td>
+                  <td>{win ? 'WIN' : 'LOSE'}</td>
                   <td>{difficulty.name}</td>
                   <td>{attempts}</td>
-                  <td>{(100 * (1 - attempts / tries)).toFixed()}%</td>
+                  <td>
+                    {(100 * (1 - attempts / tries)).toFixed()}
+                    %
+                  </td>
                   <td>{startedAt}</td>
                   <td>{finishedAt}</td>
                 </tr>
