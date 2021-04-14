@@ -80,3 +80,7 @@ You can be a little cheater and check the enemy board with the button beneath th
 You can also save current game by pressing the SAVE GAME button.
 
 You lose if you surpass the max number attempts (for example, `50` failed attempts in `HARD mode`).
+
+To check your last 10 games you can access the `SCORES` section in the application.
+
+Both Save/Load Game and Scores are being saved in LocalStorage for sake of simplicity, but can be extended to use something external like firebase+google oauth.
