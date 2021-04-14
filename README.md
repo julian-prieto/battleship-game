@@ -2,9 +2,12 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9b1fced3-db3c-4884-a62b-28284934b1f6/deploy-status)](https://app.netlify.com/sites/sleepy-mahavira-eeac18/deploys)
 
+[![homepage](https://sleepy-mahavira-eeac18.netlify.app/static/media/splash.7d89fe9c.png)](https://sleepy-mahavira-eeac18.netlify.app "Go to Battleship Game")
+
 ## Overview
 
 Battleship Game is a web browser based game to help people have a fun time at any moment of the day :)
+Game can be accessed at [sleepy-mahavira-eeac18.netlify.app](https://sleepy-mahavira-eeac18.netlify.app/ "Battleship Game")
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for sake of simplicity. In can be easily ported to other framework as NextJS.
 
 - Application is built using `React` and Tested with `Jest` and `react-testing-library`
