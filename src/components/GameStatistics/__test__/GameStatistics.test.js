@@ -36,7 +36,7 @@ it("Renders Level Correctly", () => {
   const { getByTestId } = render(
     <GameStatistics game={INITIAL_GAME_STATE} onGameReset={handleGameReset} />
   );
-  expect(getByTestId("level")).toHaveTextContent("Level: medium");
+  expect(getByTestId("level")).toHaveTextContent("Level: Medium");
 });
 
 it("Renders Attempts Correctly", () => {

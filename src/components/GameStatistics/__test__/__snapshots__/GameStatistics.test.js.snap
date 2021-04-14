@@ -8,14 +8,16 @@ exports[`Matches Snapshot 1`] = `
     className="item"
     data-testid="level"
   >
-    Level: 
-    medium
+    Level:
+     
+    Medium
   </span>
   <span
     className="item"
     data-testid="attempts"
   >
-    Attempts: 
+    Attempts:
+     
     5
     /
     10
