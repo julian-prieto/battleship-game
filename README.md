@@ -67,6 +67,8 @@ export const BOARD_SIZE = 10;
 
 To start a Game you have to browse to `PLAY` section and select a difficulty level from the previously mentioned list (Easy, Medium, Hard).
 
+At this step you will be able to load a previously saved game if it exists. For now it's a single save.
+
 To win the game you must land shots to all the ships without surpassing the maximum number of attempts defined by the difficulty level.
 
 - Partially harmed ships are represented in yellow shades.
@@ -74,5 +76,7 @@ To win the game you must land shots to all the ships without surpassing the maxi
 - Missed shots are represented in blue (as the ocean :))
 
 You can be a little cheater and check the enemy board with the button beneath the board.
+
+You can also save current game by pressing the SAVE GAME button.
 
 You lose if you surpass the max number attempts (for example, `50` failed attempts in `HARD mode`).
