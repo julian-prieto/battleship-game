@@ -11,7 +11,7 @@ export default function Score({ defaultGames }) {
     if (!defaultGames) savedGames = getSavedGamesInLocalStorage();
     else savedGames = defaultGames;
     setGames(savedGames);
-  }, []);
+  }, [defaultGames]);
 
   return (
     <main className={styles.main}>
